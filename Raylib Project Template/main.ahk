@@ -10,10 +10,11 @@ posx := (%scrRight% - %width%) / 2
 posy := (%scrBottom% - %height%) / 2
 
 InputBox, project_name, Creating a new project, What would you like to name your project?,, %width%, %height%, %posx%, %posy%
-if (ErrorLevel){ ; If the input box is closed or if it times out: exit
+if ErrorLevel or !project_name ; If the input box is closed, if it times out or if the input is empty
     ExitApp
-}
 FileCopyDir, %A_ScriptDir%\template, %A_ScriptDir%\..\%project_name%
+
+; Goes to created project's directory
 
 SendInput, !{Up} ; Goes to parent directory
 SendInput, ^l{Right} ; Opens the address bar(Path)
