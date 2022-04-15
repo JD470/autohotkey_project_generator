@@ -1,6 +1,6 @@
 # Raylib-Autohotkey-project-generator
 
-So it's basically a raylib projet generator using the scripting language of Autohotkey.
+This is a project generator using the scripting language of Autohotkey.
 
 Put it beside your c++ projects or any other type of project(since you can change the template to anything you want).
 
