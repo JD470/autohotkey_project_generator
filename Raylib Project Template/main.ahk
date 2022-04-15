@@ -19,7 +19,5 @@ SendInput, !{Up} ; Goes to parent directory
 SendInput, ^l{Right} ; Opens the address bar(Path)
 SendInput, \%project_name%{Enter}
 
-; Opens main.cpp
-
-Run, %A_ScriptDir%\..\%project_name%\main.cpp
+Run, %A_ScriptDir%\..\%project_name%\main.cpp ; Opens main.cpp
 ExitApp
