@@ -1,4 +1,4 @@
-# Raylib-Autohotkey-project-generator
+# Autohotkey-project-generator
 
 This is a project generator using the scripting language of Autohotkey.
 
