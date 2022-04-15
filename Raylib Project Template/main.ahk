@@ -3,7 +3,7 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-InputBox, var, Créer un nouveau projet raylib, Quel nom pour votre projet raylib?,, 250, 250, 250, 250
+InputBox, var, Creating a new raylib project, What would you like to name your project?,, 250, 250, 250, 250
 FileCopyDir, %A_ScriptDir%\template, %A_ScriptDir%\..\%var%
 
 SendInput !{Up} ; Goes to parent directory
