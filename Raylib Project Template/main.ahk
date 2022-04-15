@@ -6,8 +6,8 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 SysGet, scr, Monitor
 width := 300
 height := 200
-posx := %scrRight% / 2 - %width% / 2
-posy := %scrBottom% / 2 - %height% / 2
+posx := (%scrRight% - %width%) / 2
+posy := (%scrBottom% - %height%) / 2
 
 InputBox, project_name, Creating a new project, What would you like to name your project?,, %width%, %height%, %posx%, %posy%
 if (ErrorLevel){ ; If the input box is closed or if it times out: exit
