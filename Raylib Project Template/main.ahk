@@ -8,17 +8,18 @@ width := 250
 height := 200
 posx := screen_width / 2 - %width% / 2
 posy := screen_height / 2 - %height% / 2
+
 InputBox, var, Creating a new raylib project, What would you like to name your project?,, %width%, %height%, %posx%, %posy%
 if (ErrorLevel){ ; If the input box is closed or if it times out: exit
     ExitApp
 }
+
 FileCopyDir, %A_ScriptDir%\template, %A_ScriptDir%\..\%var%
 
 SendInput, !{Up} ; Goes to parent directory
 SendInput, ^l ; Opens the address bar(Path)
 SendInput, {Right}
 SendInput, \%var%{Enter}
-
 Sleep, 100
 
 ; Opens VS Code for main.cpp
