@@ -13,7 +13,6 @@ InputBox, project_name, Creating a new project, What would you like to name your
 if (ErrorLevel){ ; If the input box is closed or if it times out: exit
     ExitApp
 }
-
 FileCopyDir, %A_ScriptDir%\template, %A_ScriptDir%\..\%project_name%
 
 SendInput, !{Up} ; Goes to parent directory
