@@ -16,8 +16,7 @@ if (ErrorLevel){ ; If the input box is closed or if it times out: exit
 FileCopyDir, %A_ScriptDir%\template, %A_ScriptDir%\..\%project_name%
 
 SendInput, !{Up} ; Goes to parent directory
-SendInput, ^l ; Opens the address bar(Path)
-SendInput, {Right}
+SendInput, ^l{Right} ; Opens the address bar(Path)
 SendInput, \%project_name%{Enter}
 
 ; Opens main.cpp
