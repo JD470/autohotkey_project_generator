@@ -4,7 +4,7 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 SysGet, scr, Monitor
-width := 250
+width := 300
 height := 200
 posx := %scrRight% / 2 - %width% / 2
 posy := %scrBottom% / 2 - %height% / 2
