@@ -6,7 +6,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 InputBox, var, Creating a new raylib project, What would you like to name your project?,, 250, 250, 250, 250
 FileCopyDir, %A_ScriptDir%\template, %A_ScriptDir%\..\%var%
 
-SendInput !{Up} ; Goes to parent directory
+SendInput, !{Up} ; Goes to parent directory
 SendInput, ^l ; Opens the address bar(Path)
 SendInput, {Right}
 SendInput, \%var%{Enter}
