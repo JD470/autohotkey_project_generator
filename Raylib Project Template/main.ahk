@@ -19,13 +19,8 @@ SendInput, !{Up} ; Goes to parent directory
 SendInput, ^l ; Opens the address bar(Path)
 SendInput, {Right}
 SendInput, \%project_name%{Enter}
-Sleep, 100
 
-; Opens VS Code for main.cpp
+; Opens main.cpp
 
-SendInput, ^l ; Opens the address bar(Path)
-SendInput, {BackSpace}cmd{Enter}
-Sleep, 1000
-SendInput, code main.cpp{Enter}
-SendInput, exit{Enter}
+Run, %A_ScriptDir%\..\%project_name%\main.cpp
 ExitApp
