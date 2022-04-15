@@ -9,17 +9,17 @@ height := 200
 posx := %scrRight% / 2 - %width% / 2
 posy := %scrBottom% / 2 - %height% / 2
 
-InputBox, var, Creating a new project, What would you like to name your project?,, %width%, %height%, %posx%, %posy%
+InputBox, project_name, Creating a new project, What would you like to name your project?,, %width%, %height%, %posx%, %posy%
 if (ErrorLevel){ ; If the input box is closed or if it times out: exit
     ExitApp
 }
 
-FileCopyDir, %A_ScriptDir%\template, %A_ScriptDir%\..\%var%
+FileCopyDir, %A_ScriptDir%\template, %A_ScriptDir%\..\%project_name%
 
 SendInput, !{Up} ; Goes to parent directory
 SendInput, ^l ; Opens the address bar(Path)
 SendInput, {Right}
-SendInput, \%var%{Enter}
+SendInput, \%project_name%{Enter}
 Sleep, 100
 
 ; Opens VS Code for main.cpp
