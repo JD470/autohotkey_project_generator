@@ -3,7 +3,13 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-InputBox, var, Creating a new raylib project, What would you like to name your project?,, 250, 250, 250, 250
+
+WinGetPos,,, screen_width, screen_height, Program Manager
+width := 250
+height := 200
+posx := screen_width / 2 - %width% / 2
+posy := screen_height / 2 - %height% / 2
+InputBox, var, Creating a new raylib project, What would you like to name your project?,, %width%, %height%, %posx%, %posy%
 if (ErrorLevel){ ; If the input box is closed or if it times out: exit
     ExitApp
 }
