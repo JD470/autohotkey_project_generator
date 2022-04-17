@@ -16,9 +16,8 @@ FileCopyDir, %A_ScriptDir%\template, %A_ScriptDir%\..\%project_name%
 
 ; Goes to created project's directory
 
-SendInput, !{Up} ; Goes to parent directory
 SendInput, ^l{Right} ; Opens the address bar(Path)
-SendInput, \%project_name%{Enter}
+SendInput, \..\%project_name%{Enter}
 
 Run, %A_ScriptDir%\..\%project_name%\main.cpp ; Opens main.cpp
 ExitApp
