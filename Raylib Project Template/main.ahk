@@ -5,7 +5,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 SysGet, scr, Monitor
 width := 300
-height := 200
+height := 125
 posx := (%scrRight% - %width%) / 2
 posy := (%scrBottom% - %height%) / 2
 
