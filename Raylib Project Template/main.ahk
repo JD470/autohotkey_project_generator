@@ -9,8 +9,6 @@ height := 125
 posx := (%scrRight% - %width%) / 2
 posy := (%scrBottom% - %height%) / 2
 
-; project_name := "Test"
-
 InputBox, project_name, Creating a new project, What would you like to name your project?,, %width%, %height%, %posx%, %posy%
 if ErrorLevel or !project_name ; If the input box is closed, if it times out or if the input is empty
     ExitApp
