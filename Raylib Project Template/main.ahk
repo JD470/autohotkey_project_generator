@@ -23,8 +23,8 @@ SendInput, \..\%project_name%{Enter}
 ; Runs automatically the files in auto-open.txt
 
 autorun := A_ScriptDir . "\template\auto-open.txt"
-FileRead, FileRead, %autorun%
-sort_by_newlines := StrSplit(FileRead, "`n")
+FileRead, ReadFile, %autorun%
+sort_by_newlines := StrSplit(ReadFile, "`n")
 for i in sort_by_newlines{
     currentFile := sort_by_newlines[i]
     if (i != sort_by_newlines.Length()){
