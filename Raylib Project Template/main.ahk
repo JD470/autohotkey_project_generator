@@ -29,15 +29,15 @@ if ErrorLevel or !read_file
 
 sort_by_newlines := StrSplit(read_file, "`n")
 for i in sort_by_newlines{
-    currentFile := sort_by_newlines[i]
+    current_file := sort_by_newlines[i]
     if (i != sort_by_newlines.Length()){
-        len := StrLen(currentFile) - 1
+        len := StrLen(current_file) - 1
     }
     else{
-        len := StrLen(currentFile)
+        len := StrLen(current_file)
     }
-    currentFile := SubStr(currentFile, 1, len)
-    Run, %A_ScriptDir%\..\%project_name%\%currentFile%
+    current_file := SubStr(current_file, 1, len)
+    Run, %A_ScriptDir%\..\%project_name%\%current_file%
 }
 
 ExitApp
