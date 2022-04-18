@@ -24,6 +24,9 @@ SendInput, \..\%project_name%{Enter}
 
 autorun := A_ScriptDir . "\template\auto-open.txt"
 FileRead, read_file, %autorun%
+if ErrorLevel or !read_file
+    ExitApp
+
 sort_by_newlines := StrSplit(read_file, "`n")
 for i in sort_by_newlines{
     currentFile := sort_by_newlines[i]
