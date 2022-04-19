@@ -28,9 +28,12 @@ FileCopyDir, %A_ScriptDir%\template, %project_parent%\%project_name%
 FileDelete, %project_parent%\%project_name%\auto-open.txt ; Deletes the auto-open.txt file since it should only be in the template
 
 ; Goes to created project's directory
+#IfWinActive ahk_class CabinetWClass ; Only types the path of the project if the file explorer is active
 
 SendInput, ^l ; Opens the address bar(Path)
 SendInput, %project_parent%\%project_name%{Enter}
+
+#IfWinActive
 
 ; Runs automatically the files in auto-open.txt
 
