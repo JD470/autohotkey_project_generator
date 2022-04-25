@@ -34,7 +34,7 @@ for i in folders{
     SplitPath, cur, parent
     folders_ddl := folders_ddl . "|" . parent
 }
-templates := SubStr(folders_ddl, 2)
+templates := SubStr(folders_ddl, 2) ; There's always a | at the first character so a SubStr will do
 
 ; Default value for the directory
 
@@ -73,6 +73,7 @@ if (SubStr(DIR, 1, 1) = "\" or SubStr(DIR, 1, 1) = "/"){ ; Checks if the path is
 FileCopyDir, %A_ScriptDir%\%Temp%, %DIR%\%NAME%
 FileDelete, %DIR%\%NAME%\auto-open.txt ; Deletes the auto-open.txt file since it should only be in the template
 FileDelete, %DIR%\%NAME%\project-parent.txt ; Deletes the project-parent.txt file since it should only be in the template
+
 Gui, Destroy
 
 #IfWinActive ahk_class CabinetWClass ; Only types the path of the project if the file explorer is active
@@ -82,18 +83,25 @@ SendInput, %DIR%\%NAME%{Enter}
 
 #IfWinActive
 
-;MsgBox, %DIR%\%NAME%
-;MsgBox, %A_ScriptDir%\%Temp%
+autorun := A_ScriptDir . "\" . Temp . "\auto-open.txt"
+FileRead, read_file, %autorun%
+if ErrorLevel or !read_file
+    ExitApp
+
+sort_by_newlines := StrSplit(read_file, "`n")
+for i in sort_by_newlines{
+    current_file := sort_by_newlines[i]
+    if (i != sort_by_newlines.Length()){
+        len := StrLen(current_file) - 1
+    }
+    else{
+        len := StrLen(current_file)
+    }
+    current_file := SubStr(current_file, 1, len)
+    Run, %DIR%\%NAME%\%current_file%
+}
 
 ExitApp
 
 GuiClose: ; Exits the program on close
-ExitApp
-
-; Dev
-^r::
-Reload
-Return
-
-^Shift::
 ExitApp
