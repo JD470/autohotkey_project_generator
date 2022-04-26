@@ -1,9 +1,9 @@
 import zipfile
 
-to_unzip = "merde.zip"
+to_unzip = "template.zip"
 
 try:
     with zipfile.ZipFile(to_unzip) as f:
-        f.extractall("merde")
+        f.extractall("template")
 except:
-    print("suuuuu")
+    print("The file didn't unzip")
