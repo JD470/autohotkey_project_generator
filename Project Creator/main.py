@@ -1,9 +1,15 @@
 import zipfile
 
-to_unzip = "template.zip"
+to_unzip = ""
+name = ""
+with open("to_unzip.txt", "r") as f:
+    a = f.read().split()
+    print(a[0])
+    to_unzip = a[0]
+    name = a[1]
 
 try:
     with zipfile.ZipFile(to_unzip) as f:
-        f.extractall("template")
+        f.extractall(name)
 except:
-    print("The file didn't unzip")
+    print("Unziping didn't work!")
